@@ -53,7 +53,7 @@ The header must be the first thing in the file. A gated member is `undefined` wi
 - No `import`, `require`, `fetch`, `setTimeout`, files or Java classes. `Java.type` gives stand-ins for a fixed list of
   names (see the typings) and throws for the rest. For delays use `client.createTimer()` in a tick handler.
 - Never name a variable after a global (`color`, `font`, `render`, `player`, `client`, `packet`, `world`, `action`,
-  `stats`, `user`, `keys`, `mouse`, `gl`, `on`, `off`). `const color = color(...)` cannot run.
+  `stats`, `user`, `keys`, `mouse`, `gl`, `gl20`, `on`, `off`). `const color = color(...)` cannot run.
 - Check for null: `client.getAuraTarget()`, `client.getModule()`, `get*Setting()`, `getHeldItem()`, `getUUID()`.
 - `player.*` throws outside a world, and ticks run in menus too. A handler that throws is turned off, so do not touch
   `player` at the top level, and start per-world work in `onWorldLoad` or a render or motion handler.
@@ -66,6 +66,9 @@ The header must be the first thing in the file. A gated member is `undefined` wi
 - Set a drag's width and height every frame.
 - `ShaderUtil` sources are GLSL 4.10 core: `in vec2 v_uv;`, `layout(location = 0) out vec4 fragColor;`. No
   `gl_FragColor`, `texture2D` or `gl_TexCoord`.
+- `Java.type("org.lwjgl.opengl.GL20")` is SafeGL20: own shaders and programs, no buffers, no `#extension`. Without a
+  vertex shader draw `glDrawArrays(GL20.GL_TRIANGLES, 0, 3)`. Matrices are plain arrays. Prefer `ShaderUtil` for one
+  fragment shader.
 - `notification.post` takes milliseconds. Colors are `color({ red, green, blue, alpha })` or `color({ hex })`.
 - Handlers belong on `script` (`script.onTick`), one per event. `on("tick", fn)` also works and allows several.
 

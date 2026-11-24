@@ -25,6 +25,10 @@ test("finds unknown members, events and Java types", () => {
     );
 });
 
+test("accepts GL20", () => {
+    assert.deepEqual(messages(`${init}const GL20 = Java.type("org.lwjgl.opengl.GL20");\nscript.onRender2D(() => GL20.glUseProgram(0));`), []);
+});
+
 test("finds missing capabilities", () => {
     const source = `${init}script.onMotion(() => player.jump());`;
     assert.equal(messages(source).length, 2);

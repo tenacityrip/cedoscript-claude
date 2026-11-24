@@ -1,6 +1,6 @@
 {
   "name": "cedoscript",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Write, fix and check CedoScript scripts for the Tenacity Minecraft client.",
   "author": { "name": "tenacityrip", "url": "https://tenacity.rip" },
   "homepage": "https://tenacity.rip/docs",
