@@ -73,7 +73,7 @@ The header must be the first thing in the file. A gated member is `undefined` wi
 
 - Add the header with the capabilities the checker names.
 - `client.getClientColors()` is a pair: use `getFirst()` and `getSecond()`, not `[0]` and `[1]`.
-- `client.getIRCUsernameMap()` and `.load` share codes are gone.
+- `client.getIRCUsernameMap()` returns a plain object, so use `map[name]`. `.load` share codes are gone.
 - Java streams are gone; use array methods. `size()`, `get(i)` and `contains()` still work on lists.
 
 Docs for people: https://tenacity.rip/docs
