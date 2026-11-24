@@ -1,0 +1,12 @@
+{
+  "name": "tenacityrip",
+  "owner": { "name": "tenacityrip" },
+  "metadata": { "description": "Tenacity plugins for Claude Code" },
+  "plugins": [
+    {
+      "name": "cedoscript",
+      "source": "./",
+      "description": "Write, fix and check CedoScript scripts for the Tenacity Minecraft client."
+    }
+  ]
+}

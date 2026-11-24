@@ -1,0 +1,10 @@
+# cedoscript-claude
+
+> Claude Code plugin for writing CedoScript, the JavaScript scripting of the Tenacity Minecraft client.
+
+- [Skill](skills/cedoscript/SKILL.md): how to write scripts
+- [API reference](skills/cedoscript/reference/cedoscript.d.ts): every global, event and object
+- [Capabilities](skills/cedoscript/reference/capabilities.json)
+- [Example](skills/cedoscript/examples/target-hud.js)
+- [Checker](skills/cedoscript/scripts/check-script.mjs)
+- [Scripting docs](https://tenacity.rip/docs)
